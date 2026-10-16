@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { usePaystackPayment } from "react-paystack";
 import { useCart } from "../context/CartContext";
-import DAN from "../assets/DAN.png";
+import da from "../assets/da.png";
 
 const Navbar = () => {
   const [location, setLocation] = useState("Victoria Island, Lagos");
@@ -66,21 +66,11 @@ const Navbar = () => {
           onClick={closeMobileMenu}
         >
           <img
-            src={DAN}
+            src={da}
             alt="Jollof Kitchen & Grill Junction Logo"
             className="w-12 sm:w-16 object-contain"
           />
-          <div className="flex flex-col leading-tight">
-            <span className="text-xs font-black text-[#a43700] uppercase tracking-wider">
-              Jollof
-            </span>
-            <span className="text-[11px] sm:text-xs font-bold text-slate-800">
-              Kitchen & Grill
-            </span>
-            <span className="text-[10px] font-bold text-slate-700">
-              Junction
-            </span>
-          </div>
+          
         </Link>
 
       
