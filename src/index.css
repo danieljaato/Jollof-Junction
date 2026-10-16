@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-ROOT {
+:root {
   /* Colors */
   --color-surface: #f9f9ff;
   --color-surface-dim: #cfdaf2;
@@ -73,22 +73,13 @@ ROOT {
   --spacing-space-md: 1rem;
   --spacing-space-lg: 1.5rem;
   --spacing-space-xl: 2.5rem;
-
-  @keyframes marquee {
-    0% {
-      transform: translateX(-50%);
-    }
-
-    100% {
-      transform: translateX(0%);
-    }
-  }
-
-
-  
-    
 }
 
-
-
-
+@keyframes marquee {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
