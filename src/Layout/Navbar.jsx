@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { usePaystackPayment } from "react-paystack";
 import { useCart } from "../context/CartContext";
-import DAN from "../assets/DAN.png";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [location, setLocation] = useState("Victoria Island, Lagos");
@@ -66,7 +66,7 @@ const Navbar = () => {
           onClick={closeMobileMenu}
         >
           <img
-            src={DAN}
+            src={logo}
             alt="Fuzzy Meals Logo"
             className="w-40 sm:w-48 object-contain"
           />

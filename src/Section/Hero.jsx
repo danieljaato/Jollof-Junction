@@ -112,7 +112,7 @@ const DISHES = [
     title: 'Cracked Sea Salt Fries & Double Dips',
     description: 'Hand-cut Russet potatoes double-fried in peanut oil, accompanied by house-blended habanero crema sauce.',
     price: 2200,
-    image: 'https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=500&q=80',
+    image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=500&q=80',
   }
 ];
 
