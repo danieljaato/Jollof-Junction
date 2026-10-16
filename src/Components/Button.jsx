@@ -1,26 +1,31 @@
-import React from "react";
-
-const Button = ({
-  className = "",
-  size = "default",
-  children,
-}) => {
-  const baseClasses =
-    "relative overflow-hidden rounded-full bg-primary text-white hover:bg- muted-foreground-700 px-6";
-
-  const sizeClasses = {
-    sm: "px-4 py-2 text-sm",
-    default: "px-6 py-2.5 text-base",
-    lg: "px-8 py-4 text-lg",
-  };
-
-  const classes = `${baseClasses} ${sizeClasses[size]} ${className}`;
-
+function Button() {
   return (
-    <button className={classes}>
-      {children}
+    <button
+      className="
+        h-[22px]
+        px-[10px]
+        bg-[#00e8f5]
+        text-[#061014]
+        font-mono
+        text-[6px]
+        font-bold
+        tracking-[0.7px]
+        uppercase
+        flex
+        items-center
+        gap-[7px]
+        transition-colors
+        hover:bg-[#48f3ff]
+      "
+      style={{
+        clipPath:
+          "polygon(0 0, 96% 0, 100% 50%, 96% 100%, 0 100%)",
+      }}
+    >
+      <span>CONFIGURE YOUR BUILD</span>
+      <span className="text-[8px]">↗</span>
     </button>
   );
-};
+}
 
 export default Button;

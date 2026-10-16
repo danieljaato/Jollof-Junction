@@ -1,20 +1,37 @@
-import Footer from "./layout/FooterTem.jsx";
-import  Navbar from "./layout/Navbar.jsx";
-import Hero from "./sections/Hero.jsx";
-import About from"./sections/About.jsx";
-import Menu from "./sections/Menu.jsx";
-import  Contact from "./sections/Contact.jsx";
-function App(){
-  return <div className="min-h-screen overflow-x-hidden">
-    <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Menu />
-        <Contact />
-      </main>
-    < Footer />
-  </div>;
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./Layout/Navbar.jsx";
+import  Hero  from './Section/Hero';
+import About from "./Section/About.jsx";
+import Menu from "./Section/Menu.jsx";
+import Contact from "./Section/Contact.jsx";
+import Specials from "./Section/Specials.jsx";
+import CheckoutPage from "./Section/CheckoutPage.jsx";
+import PartnerSecure from "./Section/PartnerSecure.jsx";
+import Cart from "./Section/Cart.jsx";
+import { CartProvider } from "./context/CartContext";
+
+function App() {
+  return (
+    <CartProvider>
+      <BrowserRouter>
+        <div className="min-h-screen overflow-x-hidden">
+          <Navbar />
+          <main>
+            <Routes>
+              <Route path="/" element={<Hero />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/menu" element={<Menu />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/specials" element={<Specials />} />
+              <Route path="/checkout" element={<CheckoutPage />} />
+              <Route path="/PartnerSecure" element={<PartnerSecure />} />
+              <Route path="/cart" element={<Cart />} />
+            </Routes>
+          </main>
+        </div>
+      </BrowserRouter>
+    </CartProvider>
+  );
 }
 
 export default App;
