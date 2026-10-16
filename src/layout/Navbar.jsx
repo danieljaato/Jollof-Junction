@@ -68,7 +68,7 @@ const Navbar = () => {
           <img
             src={da}
             alt="Jollof Kitchen & Grill Junction Logo"
-            className="w-12 sm:w-16 object-contain"
+            className="w-40 sm:w-40 object-contain"
           />
           
         </Link>
