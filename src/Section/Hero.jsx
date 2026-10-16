@@ -157,7 +157,7 @@ const StatCard = ({ icon: Icon, number = "40+ Years", text = "of Nigerian cookin
         </svg>
       )}
     </span>
-    <h2 className="text-xl sm:text-2xl font-bold text-[#5C0612]">{number}</h2>
+    <h3 className="text-xl sm:text-2xl font-bold text-[#5C0612]">{number}</h3>
     <p className="mt-1 text-xs sm:text-sm text-slate-700 font-medium">{text}</p>
   </article>
 );
@@ -174,8 +174,8 @@ const Hero = () => {
     <main className="w-full min-h-screen bg-[#20b2a6]/10 px-4 py-6 sm:px-8 sm:py-10 md:px-12 md:py-12 flex flex-col gap-8 md:gap-12 relative overflow-hidden font-sans">
       <div className="max-w-7xl mx-auto w-full flex flex-col gap-8 md:gap-12">
         
-        {/* Badges / Pill Tags */}
-        <aside className="animate-fade-in flex flex-row">
+        {/* Top Notification Badge */}
+        <aside aria-label="Announcement" className="flex flex-row">
           <span className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-teal-900/10 border border-teal-900/20 backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" aria-hidden="true" />
             <span className="text-xs sm:text-sm font-semibold text-teal-900">
@@ -280,9 +280,9 @@ const Hero = () => {
                     <Icon className="w-5 h-5" />
                   </span>
                   <div>
-                    <h3 className="font-bold text-slate-900 text-sm md:text-base leading-tight">
+                    <h2 className="font-bold text-slate-900 text-sm md:text-base leading-tight">
                       {feature.title}
-                    </h3>
+                    </h2>
                     <p className="mt-1 text-xs text-slate-700 leading-relaxed font-normal">
                       {feature.description}
                     </p>
@@ -294,7 +294,7 @@ const Hero = () => {
         </section>
 
         {/* MENU SECTION */}
-        <section aria-labelledby="menu-section-heading" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <section aria-labelledby="menu-section-heading" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
           <header className="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-4">
             <div>
               <span className="text-xs font-bold text-[#b32b00] uppercase tracking-wider block mb-1">Chef's Kitchen Showcase</span>
@@ -303,10 +303,10 @@ const Hero = () => {
             </div>
 
             <nav aria-label="Menu categories" className="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs">
-              <button className="bg-[#b32b00] text-white px-3.5 py-2 rounded-full font-bold shrink-0 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#b32b00]">All Highlights</button>
-              <button className="bg-slate-200 text-slate-800 hover:bg-slate-300 px-3.5 py-2 rounded-full font-semibold shrink-0 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">Smoky Hearth</button>
-              <button className="bg-slate-200 text-slate-800 hover:bg-slate-300 px-3.5 py-2 rounded-full font-semibold shrink-0 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">Flame Grill</button>
-              <button className="bg-slate-200 text-slate-800 hover:bg-slate-300 px-3.5 py-2 rounded-full font-semibold shrink-0 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">Sides & Bites</button>
+              <button className="bg-[#b32b00] text-white px-3.5 py-2 rounded-full font-bold shrink-0 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#b32b00] cursor-pointer">All Highlights</button>
+              <button className="bg-slate-200 text-slate-800 hover:bg-slate-300 px-3.5 py-2 rounded-full font-semibold shrink-0 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 cursor-pointer">Smoky Hearth</button>
+              <button className="bg-slate-200 text-slate-800 hover:bg-slate-300 px-3.5 py-2 rounded-full font-semibold shrink-0 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 cursor-pointer">Flame Grill</button>
+              <button className="bg-slate-200 text-slate-800 hover:bg-slate-300 px-3.5 py-2 rounded-full font-semibold shrink-0 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 cursor-pointer">Sides & Bites</button>
             </nav>
           </header>
 
@@ -469,7 +469,7 @@ const Hero = () => {
         </section>
 
         {/* REVIEWS SECTION */}
-        <section aria-labelledby="reviews-section-heading" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <section aria-labelledby="reviews-section-heading" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
           <header className="text-center max-w-2xl mx-auto mb-10">
             <span className="text-xs font-bold text-[#b32b00] uppercase tracking-wider block mb-1">Lagos Foodie Stories</span>
             <h2 id="reviews-section-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">Why Lagos Loves Fuzzy Meals</h2>

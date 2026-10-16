@@ -70,15 +70,18 @@ const Navbar = () => {
             alt="Fuzzy Meals Logo"
             className="w-40 sm:w-48 object-contain"
           />
-         
         </Link>
 
-        {/* Location Dropdown */}
+        {/* Location Dropdown Section */}
         <div className="hidden md:flex items-center gap-3">
-          <div className="flex items-center gap-1.5 text-indigo-700 font-semibold text-sm">
+          <section className="flex items-center gap-1.5 text-indigo-700 font-semibold text-sm">
             <MapPin className="w-4 h-4 text-indigo-600" />
             <div className="relative flex items-center">
+              <label htmlFor="location-select" className="sr-only">
+                Delivery Location
+              </label>
               <select
+                id="location-select"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
                 className="appearance-none bg-transparent pr-5 text-indigo-500 font-semibold focus:outline-none cursor-pointer text-sm"
@@ -89,7 +92,7 @@ const Navbar = () => {
               </select>
               <ChevronDown className="w-3 h-3 text-indigo-600 absolute right-0 pointer-events-none" />
             </div>
-          </div>
+          </section>
         </div>
 
         {/* Desktop Navigation Links */}
@@ -103,10 +106,10 @@ const Navbar = () => {
 
         {/* Right Actions */}
         <div className="hidden md:flex items-center gap-2">
-          <div className="flex items-center gap-1 text-[10px] font-bold tracking-wide text-sky-600 bg-sky-50 border border-sky-200 px-2.5 py-1 rounded-full">
+          <section className="flex items-center gap-1 text-[10px] font-bold tracking-wide text-sky-600 bg-sky-50 border border-sky-200 px-2.5 py-1 rounded-full">
             <ShieldCheck className="w-3.5 h-3.5" />
             <span>PAYSTACKSECURED</span>
-          </div>
+          </section>
 
           {/* Cart Button displaying dynamic count */}
           <button
@@ -153,7 +156,7 @@ const Navbar = () => {
       {/* Mobile Dropdown Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden border-t border-gray-200 bg-white shadow-md">
-          <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col gap-2">
+          <main className="max-w-7xl mx-auto px-6 py-5 flex flex-col gap-2">
             <Link to="/" onClick={closeMobileMenu} className="px-4 py-3 rounded-lg text-gray-700 hover:bg-[#a43700] hover:text-white transition-colors">Home</Link>
             <Link to="/menu" onClick={closeMobileMenu} className="px-4 py-3 rounded-lg text-gray-700 hover:bg-[#a43700] hover:text-white transition-colors">Menu</Link>
             <Link to="/about" onClick={closeMobileMenu} className="px-4 py-3 rounded-lg text-gray-700 hover:bg-[#a43700] hover:text-white transition-colors">About</Link>
@@ -185,7 +188,7 @@ const Navbar = () => {
             >
               Order now
             </a>
-          </div>
+          </main>
         </div>
       )}
     </header>
