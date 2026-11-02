@@ -511,7 +511,9 @@ const Hero = () => {
           </div>
         </aside>
 
+
       </div>
+      
     </main>
   );
 };

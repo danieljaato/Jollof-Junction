@@ -1,10 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./Layout/Navbar.jsx";
-import  Hero  from './Section/Hero';
+import Navbar from "./layout/Navbar.jsx";
+import Hero from './Section/Hero';
 import About from "./Section/About.jsx";
 import Menu from "./Section/Menu.jsx";
 import Contact from "./Section/Contact.jsx";
-import Specials from "./Section/Specials.jsx";
 import CheckoutPage from "./Section/CheckoutPage.jsx";
 import PartnerSecure from "./Section/PartnerSecure.jsx";
 import Cart from "./Section/Cart.jsx";
@@ -14,15 +13,14 @@ function App() {
   return (
     <CartProvider>
       <BrowserRouter>
-        <div className="min-h-screen overflow-x-hidden">
+        <div className="min-h-screen overflow-x-hidden flex flex-col">
           <Navbar />
-          <main>
+          <main className="flex-grow">
             <Routes>
               <Route path="/" element={<Hero />} />
               <Route path="/about" element={<About />} />
               <Route path="/menu" element={<Menu />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/specials" element={<Specials />} />
               <Route path="/checkout" element={<CheckoutPage />} />
               <Route path="/PartnerSecure" element={<PartnerSecure />} />
               <Route path="/cart" element={<Cart />} />

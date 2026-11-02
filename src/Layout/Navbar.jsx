@@ -101,7 +101,7 @@ const Navbar = () => {
           <Link to="/menu" className="px-4 py-2 text-sm text-gray-600 hover:text-white rounded-full hover:bg-[#a43700] transition-colors">Menu</Link>
           <Link to="/about" className="px-4 py-2 text-sm text-gray-600 hover:text-white rounded-full hover:bg-[#a43700] transition-colors">About</Link>
           <Link to="/contact" className="px-4 py-2 text-sm text-gray-600 hover:text-white rounded-full hover:bg-[#a43700] transition-colors">Contact</Link>
-          <Link to="/specials" className="px-4 py-2 text-sm text-gray-600 hover:text-white rounded-full hover:bg-[#a43700] transition-colors">Specials</Link>
+
         </div>
 
         {/* Right Actions */}
@@ -161,7 +161,7 @@ const Navbar = () => {
             <Link to="/menu" onClick={closeMobileMenu} className="px-4 py-3 rounded-lg text-gray-700 hover:bg-[#a43700] hover:text-white transition-colors">Menu</Link>
             <Link to="/about" onClick={closeMobileMenu} className="px-4 py-3 rounded-lg text-gray-700 hover:bg-[#a43700] hover:text-white transition-colors">About</Link>
             <Link to="/contact" onClick={closeMobileMenu} className="px-4 py-3 rounded-lg text-gray-700 hover:bg-[#a43700] hover:text-white transition-colors">Contact</Link>
-            <Link to="/specials" onClick={closeMobileMenu} className="px-4 py-3 rounded-lg text-gray-700 hover:bg-[#a43700] hover:text-white transition-colors">Specials</Link>
+            
 
             {/* Mobile Cart */}
             <button

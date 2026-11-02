@@ -2,61 +2,62 @@ import React, { useState } from 'react';
 import { ShoppingCart, Search, Plus, Minus, X, Trash2, ArrowLeft, CheckCircle2 } from 'lucide-react';
 
 const INITIAL_PRODUCTS = [
+  
   {
     id: 1,
     name: 'Smoky Jollof Rice',
     price: 2000,
     category: 'Rice',
-    image: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600'
+    image:'src/assets/Jollof Rice Recipe by Deborah.jpg'
   },
   {
     id: 2,
     name: 'Fried Plantain (Dodo)',
     price: 800,
     category: 'Sides',
-    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600'
+    image:'src/assets/Donna Jos Sia.jpg'
   },
   {
     id: 3,
     name: 'Roasted Chicken',
     price: 4500,
     category: 'Protein',
-    image: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=600'
+    image:'src/assets/Fresh whole rotisserie chicken for the win….jpg' // Grilled/roasted seasoned chicken
   },
   {
     id: 4,
     name: 'Pounded Yam',
     price: 800,
     category: 'Swallow',
-    image: 'https://images.unsplash.com/photo-1547592180-85f173990554?w=600'
+    image:'src/assets/Pounded Yam.png' // Smooth white swallow/fufu texture
   },
   {
     id: 5,
     name: 'Egusi Soup',
     price: 1500,
     category: 'Soups',
-    image: 'https://images.unsplash.com/photo-1547592180-85f173990554?w=600'
+    image: 'src/assets/Egusi Soup.jpg' // Rich traditional textured stew/soup
   },
   {
     id: 6,
     name: 'Suya Spaghetti',
     price: 3500,
     category: 'Pasta',
-    image: 'https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?w=600'
+    image: 'src/assets/hy.jpg'
   },
   {
     id: 7,
     name: 'Moi Moi',
     price: 1000,
     category: 'Sides',
-    image: 'https://images.unsplash.com/photo-1547592180-85f173990554?w=600'
+    image: 'src/assets/moi moi 💕.jpg' // Steamed bean pudding style
   },
   {
     id: 8,
     name: 'Supreme Ice Cream 500ML',
     price: 2800,
     category: 'Drinks & Desserts',
-    image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600'
+    image :'src/assets/Fanice vanilla and strawberry ice-cream.jpg'
   },
 ];
 
