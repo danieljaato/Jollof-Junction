@@ -1,67 +1,68 @@
 import React, { useState } from 'react';
 import { ShoppingCart, Search, Plus, Minus, X, Trash2, ArrowLeft, CheckCircle2 } from 'lucide-react';
-import jollofImg from './assets/Jollof-Rice.jpg';
+import jollofImg from "../assets/Jollof-Rice.jpg";
+import FriedPlantainDodo from "../assets/Donna Jos Sia.jpg";
+import RoastedChicken from "../assets/Fresh whole rotisserie chicken for the win….jpg";
+
+import EgusiSoup from "../assets/Egusi Soup.jpg";
+import SuyaSpaghetti from "../assets/hy.jpg";
+import MoiMoi from "../assets/moi moi 💕.jpg";
+import SupremeIceCream500ML from "../assets/Fanice vanilla and strawberry ice-cream.jpg";
+
 const INITIAL_PRODUCTS = [
-  
   {
     id: 1,
     name: 'Smoky Jollof Rice',
     price: 2000,
     category: 'Rice',
-    image: jollofImg
+    image: jollofImg,
   },
   {
     id: 2,
     name: 'Fried Plantain (Dodo)',
     price: 800,
     category: 'Sides',
-    image:'src/assets/Donna Jos Sia.jpg'
+    image: FriedPlantainDodo,
   },
   {
     id: 3,
     name: 'Roasted Chicken',
     price: 4500,
     category: 'Protein',
-    image:'src/assets/Fresh whole rotisserie chicken for the win….jpg' // Grilled/roasted seasoned chicken
+    image: RoastedChicken,
   },
-  {
-    id: 4,
-    name: 'Pounded Yam',
-    price: 800,
-    category: 'Swallow',
-    image:'src/assets/Pounded Yam.png' // Smooth white swallow/fufu texture
-  },
+  
   {
     id: 5,
     name: 'Egusi Soup',
     price: 1500,
     category: 'Soups',
-    image: 'src/assets/Egusi Soup.jpg' // Rich traditional textured stew/soup
+    image: EgusiSoup,
   },
   {
     id: 6,
     name: 'Suya Spaghetti',
     price: 3500,
     category: 'Pasta',
-    image: 'src/assets/hy.jpg'
+    image: SuyaSpaghetti,
   },
   {
     id: 7,
     name: 'Moi Moi',
     price: 1000,
     category: 'Sides',
-    image: 'src/assets/moi moi 💕.jpg' // Steamed bean pudding style
+    image: MoiMoi,
   },
   {
     id: 8,
     name: 'Supreme Ice Cream 500ML',
     price: 2800,
     category: 'Drinks & Desserts',
-    image :'src/assets/Fanice vanilla and strawberry ice-cream.jpg'
+    image: SupremeIceCream500ML,
   },
 ];
 
-const CATEGORIES = ['All', 'Rice', 'Sides', 'Protein', 'Swallow', 'Soups', 'Pasta', 'Drinks & Desserts'];
+const CATEGORIES = ['All', 'Rice', 'Sides', 'Protein', 'Soups', 'Pasta', 'Drinks & Desserts'];
 
 export default function FoodOrderingApp() {
   const [products] = useState(INITIAL_PRODUCTS);
@@ -118,6 +119,7 @@ export default function FoodOrderingApp() {
     setCart(prevCart => prevCart.filter(item => item.id !== id));
   };
 
+  const totalItemsCount = cart.reduce((sum, item) => sum + item.quantity, 0);
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const deliveryFee = 1500;
   const total = subtotal + (cart.length > 0 ? deliveryFee : 0);
@@ -135,10 +137,29 @@ export default function FoodOrderingApp() {
     setOrderPlaced(true);
   };
 
-  
-
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800 font-sans">
+      {/* Navigation Header with Cart Button */}
+      <header className="bg-white border-b border-gray-100 sticky top-0 z-40 shadow-xs">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="font-extrabold text-xl text-[#a43700]">Jollof Junction</span>
+          </div>
+          <button
+            onClick={() => setIsCartOpen(true)}
+            className="relative bg-gray-100 hover:bg-gray-200 p-2.5 rounded-xl flex items-center gap-2 transition font-semibold text-sm"
+          >
+            <ShoppingCart className="w-5 h-5 text-[#a43700]" />
+            <span className="hidden sm:inline">Cart</span>
+            {totalItemsCount > 0 && (
+              <span className="absolute -top-1.5 -right-1.5 bg-[#a43700] text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">
+                {totalItemsCount}
+              </span>
+            )}
+          </button>
+        </div>
+      </header>
+
       {/* Hero / Banner */}
       <section className="bg-[#a43700] text-white py-12 px-4 sm:px-6 lg:px-8 text-center">
         <h1 className="text-3xl sm:text-4xl font-extrabold mb-3">Order Your Favorite Nigerian Meals</h1>
@@ -147,7 +168,6 @@ export default function FoodOrderingApp() {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* If order is completed successfully */}
         {orderPlaced ? (
           <div className="max-w-md mx-auto bg-white p-8 rounded-2xl shadow-sm text-center border border-gray-100 my-12">
             <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" />
@@ -166,7 +186,6 @@ export default function FoodOrderingApp() {
             </button>
           </div>
         ) : isCheckingOut ? (
-          /* Checkout Form View */
           <div className="max-w-4xl mx-auto">
             <button 
               onClick={() => setIsCheckingOut(false)}
@@ -176,7 +195,6 @@ export default function FoodOrderingApp() {
             </button>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Form fields */}
               <form onSubmit={handleCompleteOrder} className="md:col-span-2 space-y-6 bg-white p-6 sm:p-8 rounded-2xl border border-gray-100 shadow-sm">
                 <h2 className="text-xl font-bold text-gray-900">Checkout Details</h2>
                 
@@ -281,7 +299,6 @@ export default function FoodOrderingApp() {
                 </button>
               </form>
 
-              {/* Order Summary Column */}
               <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm h-fit">
                 <h3 className="text-lg font-bold text-gray-900 mb-4">Order Summary</h3>
                 <div className="space-y-3 mb-6 max-h-60 overflow-y-auto pr-1">
@@ -310,7 +327,6 @@ export default function FoodOrderingApp() {
             </div>
           </div>
         ) : (
-          /* Menu & Catalog View */
           <>
             <div className="flex flex-col md:flex-row gap-4 justify-between items-center mb-8">
               <div className="relative w-full md:w-96">
