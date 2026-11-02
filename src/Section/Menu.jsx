@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ShoppingCart, Search, Plus, Minus, X, Trash2, ArrowLeft, CheckCircle2 } from 'lucide-react';
-
+import jollofImg from './assets/Jollof-Rice.jpg';
 const INITIAL_PRODUCTS = [
   
   {
@@ -8,7 +8,7 @@ const INITIAL_PRODUCTS = [
     name: 'Smoky Jollof Rice',
     price: 2000,
     category: 'Rice',
-    image:'src/assets/Jollof Rice Recipe by Deborah.jpg'
+    image: jollofImg
   },
   {
     id: 2,
